@@ -25,6 +25,7 @@ import (
 	"github.com/pufferpanel/pufferpanel/v2/operations/download"
 	"github.com/pufferpanel/pufferpanel/v2/operations/extract"
 	"github.com/pufferpanel/pufferpanel/v2/operations/fabricdl"
+	"github.com/pufferpanel/pufferpanel/v2/operations/quiltdl"
 	"github.com/pufferpanel/pufferpanel/v2/operations/forgedl"
 	"github.com/pufferpanel/pufferpanel/v2/operations/javadl"
 	"github.com/pufferpanel/pufferpanel/v2/operations/mkdir"
@@ -171,6 +172,9 @@ func loadCoreModules() {
 
 	fabricDlFactory := fabricdl.Factory
 	commandMapping[fabricDlFactory.Key()] = fabricDlFactory
+	
+	quiltDlFactory := quiltdl.Factory
+	commandMapping[quiltDlFactory.Key()] = quiltDlFactory
 
 	sleepFactory := sleep.Factory
 	commandMapping[sleepFactory.Key()] = sleepFactory
